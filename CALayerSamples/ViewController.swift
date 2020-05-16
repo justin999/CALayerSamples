@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view1TopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var view2TopConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,8 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
-            self.moveViews()
+//            self.moveViews()
+            self.modifyConstraints()
         }
         
     }
@@ -51,6 +54,15 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 0.3) {
                 targetView?.frame = CGRect(x: 200, y: 200, width: 100, height: 100)
             }
+        }
+    }
+    
+    private func modifyConstraints() {
+        view1TopConstraint.constant = 180
+        view2TopConstraint.constant = 180
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutSubviews()
         }
     }
 }

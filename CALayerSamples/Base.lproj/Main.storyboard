@@ -39,13 +39,20 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtA-Rb-Rd2">
                                         <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRw-gH-ph8">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRw-gH-ph8">
                                                 <rect key="frame" x="100" y="100" width="100" height="100"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="4RB-n3-Tsa"/>
+                                                    <constraint firstAttribute="height" constant="100" id="tSb-9n-3V3"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="aRw-gH-ph8" firstAttribute="leading" secondItem="RtA-Rb-Rd2" secondAttribute="leading" constant="100" id="SgA-Kl-zMW"/>
+                                            <constraint firstItem="aRw-gH-ph8" firstAttribute="top" secondItem="RtA-Rb-Rd2" secondAttribute="top" constant="100" id="g4O-1d-JCp"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -64,7 +71,9 @@
                     </view>
                     <connections>
                         <outlet property="view1" destination="X2Z-0m-21Q" id="wR4-Kl-bPo"/>
+                        <outlet property="view1TopConstraint" destination="wH6-q2-v4u" id="t8e-Gv-gWn"/>
                         <outlet property="view2" destination="aRw-gH-ph8" id="e1D-Qx-J0v"/>
+                        <outlet property="view2TopConstraint" destination="g4O-1d-JCp" id="syn-gp-xAI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
